@@ -18,7 +18,6 @@
     "author": "",
     "license": "MIT",
     "dependencies": {
-        "@tailwindcss/aspect-ratio": "^0.2.0",
         "@types/luxon": "^1.26.5",
         "date-fns": "^2.21.1",
         "lit": "latest",

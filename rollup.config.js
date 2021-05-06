@@ -3,7 +3,6 @@ import resolve from "@rollup/plugin-node-resolve";
 import postcss from "rollup-plugin-postcss";
 import litcss from "rollup-plugin-postcss-lit";
 import tailwindcss from "tailwindcss";
-import aspectRatio from "@tailwindcss/aspect-ratio";
 
 export default {
   input: "src/index.ts",
@@ -32,7 +31,6 @@ export default {
           variants: {
             extend: {},
           },
-          plugins: [aspectRatio],
         }),
       ],
     }),
