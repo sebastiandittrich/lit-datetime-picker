@@ -36,7 +36,7 @@ export class TimePicker extends LitModal {
       return formatISO(value) != formatISO(oldValue);
     },
   })
-  public tempValue: Date = new Date();
+  public tempValue?: Date;
 
   protected fallbackValue = new Date();
 
@@ -70,7 +70,7 @@ export class TimePicker extends LitModal {
   doneClick() {
     this.close();
     this.dispatchEvent(
-      new CustomEvent("input", { detail: new Date(this.tempValue) })
+      new CustomEvent("input", { detail: new Date(this.date) })
     );
   }
 }

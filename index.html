@@ -14,7 +14,8 @@
       Choose Datetime
     </button>
     <lit-datetime-picker
-      oninput="console.log(arguments[0].detail)"
+      oninput="document.getElementsByTagName('button')[0].innerText = arguments[0].detail.toISOString();
+      document.getElementsByTagName('lit-datetime-picker')[0].setAttribute('value', arguments[0].detail.toISOString())"
     ></lit-datetime-picker>
   </body>
 </html>
