@@ -10,6 +10,8 @@ This is a datetime picker web component built with [Lit](https://lit.dev/), aimi
 npm install lit-datetime-picker
 ```
 
+Then, insert `import 'lit-datetime-picker'` anywhere in your code (an `index.js` would be ideal), so that the web component can register itself.
+
 ### Through CDN
 
 ```html

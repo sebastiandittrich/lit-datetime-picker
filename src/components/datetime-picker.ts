@@ -18,7 +18,6 @@ import {
 import { LitModal } from "./lit-modal";
 import { TimePicker } from "./time-picker";
 import getHours from "date-fns/getHours";
-import { Calendar } from "./calendar";
 import { prefixed } from "../utils";
 
 @customElement(prefixed("datetime-picker"))
