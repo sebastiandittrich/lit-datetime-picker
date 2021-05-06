@@ -133,3 +133,9 @@ export class DatetimePicker extends LitModal {
     </div>`;
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "lit-datetime-picker": DatetimePicker;
+  }
+}
