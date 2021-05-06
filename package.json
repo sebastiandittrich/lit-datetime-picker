@@ -1,6 +1,6 @@
 {
     "name": "lit-datetime-picker",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "A web component datetime picker with material design",
     "type": "module",
     "main": "lib/index.js",
