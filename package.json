@@ -1,30 +1,37 @@
 {
-  "name": "lit-sass-ts-starter",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "rollup --config rollup.config.js",
-    "build:watch": "npm run build -- --watch",
-    "dev": "npm run build:watch & npm run serve",
-    "serve": "wds --watch --open"
-  },
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "lit": "latest",
-    "tslib": "^2.2.0"
-  },
-  "devDependencies": {
-    "@rollup/plugin-node-resolve": "^11.2.1",
-    "@web/dev-server": "^0.1.17",
-    "node-sass": "^5.0.0",
-    "postcss": "^8.2.13",
-    "rollup": "^2.46.0",
-    "rollup-plugin-postcss": "^4.0.0",
-    "rollup-plugin-postcss-lit": "^1.0.1",
-    "rollup-plugin-typescript2": "^0.30.0",
-    "sass": "^1.32.12",
-    "typescript": "^4.2.4"
-  }
+    "name": "lit-datetime-picker",
+    "version": "1.0.0",
+    "description": "A web component datetime picker with material design",
+    "type": "module",
+    "main": "lib/index.js",
+    "module": "lib/index.js",
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "rollup --config rollup.config.js",
+        "build:watch": "npm run build -- --watch",
+        "dev": "TAILWIND_MODE=watch npm run build:watch & npm run serve",
+        "serve": "wds --watch --open"
+    },
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "@tailwindcss/aspect-ratio": "^0.2.0",
+        "@types/luxon": "^1.26.5",
+        "date-fns": "^2.21.1",
+        "lit": "latest",
+        "tailwindcss": "^2.1.2",
+        "tslib": "^2.2.0"
+    },
+    "devDependencies": {
+        "@rollup/plugin-node-resolve": "^11.2.1",
+        "@web/dev-server": "^0.1.17",
+        "postcss": "^8.2.13",
+        "rollup": "^2.46.0",
+        "rollup-plugin-postcss": "^4.0.0",
+        "rollup-plugin-postcss-lit": "^1.0.1",
+        "rollup-plugin-typescript2": "^0.30.0",
+        "typescript": "^4.2.4"
+    }
 }

@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="lib/index.js"></script>
+    <script src="lib/datetime-picker.js"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   </head>
   <body>
-    <my-element></my-element>
+    <button
+      onclick="document.getElementsByTagName('lit-datetime-picker')[0].show()"
+    >
+      Choose Datetime
+    </button>
+    <lit-datetime-picker
+      oninput="console.log(arguments[0].detail)"
+    ></lit-datetime-picker>
   </body>
 </html>

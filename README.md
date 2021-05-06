@@ -1,33 +1,94 @@
-# Lit Sass Typescript Starter
+# lit-datetime-picker
 
-This is a project that has a very simple setup for SASS + TS + Lit that uses rollup.
+This is a datetime picker web component built with [Lit](https://lit.dev/), aiming to reproduce the appearance of the Material UI datetime picker.
 
-See an online demo [here on Glitch](https://glitch.com/edit/#!/lit-sass-ts-starter).
+## Installation
 
-## Goals
+### Using NPM
 
-* Get started with Lit + SASS + TS
-* Exemplify how to setup rollup to support this config
-
-## Non-goals
-
-* This does not include a production build as that may vary from project to project
-* This does not support Lit 1
-  * It can, but the imports will have to be changed
-* This does not recommend an Lit app structure - only exemplifies the build setup
-
-## Get Started
-
-Clone the repo. Then install.
-
-```bash
-npm install
+```sh
+npm install lit-datetime-picker
 ```
 
-Then start the dev server and rollup watchers
+### Through CDN
 
-```bash
-npm run dev
+```html
+<html>
+  <head>
+    <script src="https://unpkg.com/lit-datetime-picker"></script>
+  </head>
+</html>
 ```
 
-A browser window should open and rollup will watch your files for changes.
+## Using the Component
+
+```html
+<body>
+  <button
+    onclick="document.getElementsByTagName('lit-datetime-picker')[0].show()"
+  >
+    Choose Datetime
+  </button>
+  <lit-datetime-picker
+    oninput="console.log(arguments[0].detail)"
+  ></lit-datetime-picker>
+</body>
+```
+
+## Using a different Prefix
+
+You can change the prefix when consuming the component through a CDN (default is `lit`):
+
+```html
+<script
+  src="https://unpkg.com/lit-datetime-picker"
+  prefix="some-prefix"
+></script>
+<some-prefix-datetime-picker></some-prefix-datetime-picker>
+```
+
+## Public API
+
+### Methods
+
+#### Show
+
+Call this method to show the modal to the user.
+
+```ts
+import { DatetimePicker } from "lit-datetime-picker/components/datetime-picker";
+
+(someref as DatetimePicker).show();
+```
+
+#### Close
+
+Call this method to close the modal if it is open.
+
+```ts
+import { DatetimePicker } from "lit-datetime-picker/components/datetime-picker";
+
+(someref as DatetimePicker).close();
+```
+
+### Attributes
+
+#### Value
+
+You can use this attribute to set a default value in ISO format.
+
+```html
+<lit-datetime-picker value="2021-06-26T01:15:58.251Z"></lit-datetime-picker>
+```
+
+### Events
+
+#### Input
+
+You can watch the `input` event on the custom element to receive input when the `done` button is clicked in the picker. The event will be a CustomEvent with type `CustomEvent<Date>`. This event has the following important properties:
+
+```ts
+interface extends Event {
+    detail: Date
+}
+```

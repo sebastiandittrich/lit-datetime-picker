@@ -1,0 +1,54 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+
+@layer components {
+  .stacking {
+    display: grid;
+    grid-template: "content" 1fr / 1fr;
+    justify-items: stretch;
+    align-items: stretch;
+  }
+  .stacking > * {
+    grid-area: content;
+  }
+  .clickable {
+    @apply cursor-pointer select-none;
+  }
+  .clickable-bg {
+    @apply clickable;
+  }
+  .clickable-bg:hover {
+    @apply bg-gray-100;
+  }
+
+  .button {
+    @apply inline-flex items-center px-4 py-2 bg-blue-700 border border-transparent rounded-md font-medium text-xs text-white uppercase tracking-widest transition ease-in-out duration-150 clickable;
+  }
+  .text-button {
+    @apply button;
+    @apply bg-transparent text-blue-500 normal-case text-sm tracking-wider;
+  }
+  .text-button:active {
+    @apply bg-blue-200;
+  }
+  .text-button:hover {
+    @apply bg-blue-100;
+  }
+  .text-button:focus {
+    @apply outline-none border-gray-900;
+  }
+  .button:hover {
+    @apply bg-blue-600;
+  }
+  .button:focus {
+    @apply outline-none border-gray-900;
+  }
+  .button:active {
+    @apply bg-blue-900;
+  }
+  .button:disabled {
+    @apply opacity-25;
+  }
+}
+
+@import "tailwindcss/utilities";

@@ -1,17 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "strict": true,
+    "target": "es2019",
     "module": "es2015",
     "moduleResolution": "node",
-    "lib": ["es2017", "dom", "dom.iterable"],
+    "lib": ["es2017", "dom"],
     "declaration": true,
+    "declarationMap": true,
     "sourceMap": true,
-    "inlineSources": true,
     "experimentalDecorators": true,
     "skipLibCheck": true,
-    "noImplicitAny": false,
-    "outDir": "./",
-    "importHelpers": true,
+    "noImplicitAny": true,
   },
   "include": [
     "**/*.ts",
