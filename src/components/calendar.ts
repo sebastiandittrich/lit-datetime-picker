@@ -57,13 +57,13 @@ export class Calendar extends LitElement {
     isOutOfMonth: boolean;
     date: Date;
   }[][] {
-    const first = startOfWeek(startOfMonth(new Date(this.currentMonth)));
-    const last = endOfWeek(endOfMonth(new Date(this.currentMonth)));
+    const first = startOfWeek(startOfMonth(new Date(this.currentMonth)), { weekStartsOn: 1 });
+    const last = endOfWeek(endOfMonth(new Date(this.currentMonth)), { weekStartsOn: 1 });
 
     const sortedByWeeks: { [key: string]: Array<{}> } = {};
     let current = first;
     do {
-      const index = formatISO(startOfWeek(current));
+      const index = formatISO(startOfWeek(current, { weekStartsOn: 1 }));
       if (!sortedByWeeks[index]) {
         sortedByWeeks[index] = [];
       }
