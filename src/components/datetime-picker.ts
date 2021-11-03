@@ -44,6 +44,9 @@ export class DatetimePicker extends LitModal {
   })
   public value?: Date;
 
+  @property({ type: Number })
+  public startOfWeek: 0 | 1 | 2 | 3 | 4 | 5 | 6 = 0;
+
   @state({
     hasChanged(value: Date | undefined, oldValue: Date | undefined) {
       if (value == undefined || oldValue == undefined) {
@@ -92,6 +95,7 @@ export class DatetimePicker extends LitModal {
       <lit-datetime-picker-calendar
         .value=${this.selected}
         @input=${this.onCalendarInput}
+        .startOfWeek=${this.startOfWeek}
       ></lit-datetime-picker-calendar>
       <div class="flex flex-row items-center mt-4">
         <svg

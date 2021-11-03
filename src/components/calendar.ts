@@ -51,19 +51,28 @@ export class Calendar extends LitElement {
   })
   public value: Date = new Date();
 
+  @property({ type: Number })
+  public startOfWeek: 0 | 1 | 2 | 3 | 4 | 5 | 6 = 0;
+
   get weeks(): {
     isToday: boolean;
     isSelected: boolean;
     isOutOfMonth: boolean;
     date: Date;
   }[][] {
-    const first = startOfWeek(startOfMonth(new Date(this.currentMonth)), { weekStartsOn: 1 });
-    const last = endOfWeek(endOfMonth(new Date(this.currentMonth)), { weekStartsOn: 1 });
+    const first = startOfWeek(startOfMonth(new Date(this.currentMonth)), {
+      weekStartsOn: this.startOfWeek,
+    });
+    const last = endOfWeek(endOfMonth(new Date(this.currentMonth)), {
+      weekStartsOn: this.startOfWeek,
+    });
 
     const sortedByWeeks: { [key: string]: Array<{}> } = {};
     let current = first;
     do {
-      const index = formatISO(startOfWeek(current, { weekStartsOn: 1 }));
+      const index = formatISO(
+        startOfWeek(current, { weekStartsOn: this.startOfWeek })
+      );
       if (!sortedByWeeks[index]) {
         sortedByWeeks[index] = [];
       }

@@ -5,6 +5,11 @@
     "type": "module",
     "main": "lib/index.js",
     "module": "lib/index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sebastiandittrich/lit-datetime-picker.git"
+    },
+    "homepage": "https://github.com/sebastiandittrich/lit-datetime-picker#readme",
     "publishConfig": {
         "access": "public"
     },

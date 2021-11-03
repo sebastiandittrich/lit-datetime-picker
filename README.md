@@ -82,6 +82,14 @@ You can use this attribute to set a default value in ISO format.
 ```html
 <lit-datetime-picker value="2021-06-26T01:15:58.251Z"></lit-datetime-picker>
 ```
+#### Start of Week
+
+You can use the `startOfWeek` attribute to set the start of the calendar week. Defaults to `0`, meaning the week starts with sunday.
+
+```html
+<!-- Setting the week to start with monday-->
+<lit-datetime-picker startOfWeek="1"></lit-datetime-picker>
+```
 
 ### Events
 
