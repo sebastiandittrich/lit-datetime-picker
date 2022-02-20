@@ -140,8 +140,7 @@ export class Calendar extends LitElement {
         <div
           class="text-gray-500 text-xs flex flex-row items-center justify-between row font-medium"
         >
-          ${"MTWTFSS"
-            .split("")
+          ${this.weeks[1]?.map(day => intlFormat(day.date, { weekday: "narrow" }))
             .map(
               (day) => html`<div class="p-2 flex-1 text-center">${day}</div>`
             )}
